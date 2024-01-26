@@ -6,7 +6,7 @@ const mobileTitles = document.querySelectorAll(".mobile-menu-items li");
 const deskSubmenu = document.querySelectorAll(".list-items li");
 
 
-
+/* SIDEBAR AND HAMBURGER BUTTON TOGGLE */
 
 
 function mobileToggle() {
