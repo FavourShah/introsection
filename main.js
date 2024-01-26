@@ -7,9 +7,7 @@ const deskSubmenu = document.querySelectorAll(".list-items li");
 
 /* SIDEBAR AND HAMBURGER BUTTON TOGGLE */
 
-/* 
-hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active')
-); */ // ALTERNATIVE WAY
+
 
 function mobileToggle() {
   mobileMenu.classList.toggle("active");
