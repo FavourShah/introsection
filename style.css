@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: gray;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*NAVBAR*/
+
+.navbar {
+  padding: 30px 0;
+  margin-bottom: 100px;
+}
+
+.logo {
+  padding-right: 50px;
+}
+
+.navbar .container {
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left,
+.list-items {
+  display: flex;
+}
+
+.nav-right .nav-btn {
+  border: 1px solid black;
+  border-radius: 15px;
+
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.list-items {
+  position: relative;
+  cursor: pointer;
+}
+
+.list-items li {
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+.nav-right a {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.list-items .features {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+.submenu {
+  position: absolute;
+  top: 50px;
+  right: 280px;
+  background: white;
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  display: none;
+  justify-content: center;
+ 
+
+}
+
+.submenu.submenu-two {
+  right: 140px;
+  width: 110px;
+}
+
+.list-items .list-item.active .submenu {
+  display: block;
+}
+
+.list-items .list-item.active .features img {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
+
+/* this  above, is to make the arrow img rotate upside down on click*/
+
+.submenu .subitems {
+  margin: 15px 10px;
+}
+
+.subitems a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.hamburger-btn {
+  display: none;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+/*MOBILE MENU*/
+
+.mobile-menu {
+  position: fixed;
+  background: white;
+  height: 100%;
+  width: 250px;
+  right: -300px;
+  top: 0;
+  padding: 30px;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobile-menu-items {
+  margin-top: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mobile-menu-item {
+  margin-top: 20px;
+}
+
+.mobile-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-menu-title img {
+  width: 10px;
+}
+
+.mobile-dropdown img {
+  width: 15px;
+  vertical-align: middle;
+}
+
+.mobile-menu-items .mobile-menu-item.active .mobile-menu-title img{
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
+
+.mobile-dropdown {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: all 0.5s ease;
+}
+
+.mobile-dropdown .items span {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.mobile-menu-items .mobile-menu-item.active .mobile-dropdown {
+  padding: 10px 30px;
+  opacity: 1;
+  height: auto;
+  width: auto;
+}
+
+.mobile-menu-items .mobile-menu-item.active .mobile-dropdown .items {
+  margin: 15px 0;
+}
+
+.mobile-menu-items .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-items .nav-btn {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/*MAIN*/
+
+main .container {
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-h1 {
+  font-size: 5rem;
+}
+
+.hero-h1 br::before {
+  content: " ";
+}
+.hero-h1 br::after {
+  content: "";
+}
+
+.hero-header{
+  margin-top: 20px;
+}
+
+
+.hero-header p {
+  width: 55%;
+  margin: 20px 0;
+}
+
+.hero-image .mobile {
+  display: none;
+}
+
+.hero-btn {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 15px;
+  background: black;
+  color: white;
+  padding: 15px 30px;
+  cursor: pointer;
+  margin: 30px 0;
+}
+
+.clients {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  align-items: center;
+}
+
+.clients img {
+  width: 80px;
+  margin: 30px 0;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 960px) {
+  .navbar {
+    margin-bottom: 10px;
+  }
+
+  .navbar .container,
+  main .container {
+    width: 100%;
+  }
+
+  .nav-left .list-items,
+  .nav-right {
+    display: none;
+  }
+  .hamburger-btn {
+    display: block;
+    z-index: 10000;
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+
+  main .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    width: 100%;
+    order: -1;
+  }
+
+  .hero-image .mobile {
+    display: block;
+  }
+
+  .hero-image .desktop {
+    display: none;
+  }
+
+  .hero-h1 {
+    width: 100%;
+    text-align: center;
+    margin: 30px auto;
+    font-size: 2rem;
+  }
+
+  .hero-h1 br {
+    display: none;
+  }
+
+  .hero-header p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .clients {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .clients img {
+    margin: 40px auto;
+  }
+
+  .hero-btn {
+    display: block;
+    text-align: center;
+    width: 32%;
+    margin: auto;
+  }
+}
